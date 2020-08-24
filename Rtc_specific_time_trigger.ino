@@ -55,9 +55,10 @@ void setup() {
   Wire.begin();
   rtc.begin();
 
- if(rtc.lostPower()) {
+ 
+// if(rtc.lostPower()) {      // uncomment this line on the second time upload
    rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));  
- }
+// }              // uncomment this close curly braces
 
    pinMode(relay1, OUTPUT);
    pinMode(led, OUTPUT);  
@@ -131,7 +132,6 @@ if((CurrentHour==ONHour5) && (CurrentMinute == ONMinute5)){
       digitalWrite(led,LOW);
 //      Serial.println("INTERNET OFF");
  }
-
 }
 
 
